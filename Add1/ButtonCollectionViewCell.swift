@@ -53,8 +53,8 @@ class ButtonCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configureCellContent(number: Int)
+    func configureCellContent(number: String)
     {
-        numberLabel.text = "\(number)"
+        numberLabel.text = number
     }
 }

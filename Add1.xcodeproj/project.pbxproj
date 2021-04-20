@@ -17,6 +17,12 @@
 		539408AB262AEC730054A153 /* HVD_Comic_Serif_Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 539408AA262AEC730054A153 /* HVD_Comic_Serif_Pro.otf */; };
 		539408B0262B08CD0054A153 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539408AF262B08CD0054A153 /* GameView.swift */; };
 		539408B4262B09980054A153 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 539408B3262B09980054A153 /* SnapKit */; };
+		539569FD262F266000F0A8A2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 539569FC262F266000F0A8A2 /* Lottie */; };
+		53956A06262F302F00F0A8A2 /* correct.json in Resources */ = {isa = PBXBuildFile; fileRef = 53956A01262F302E00F0A8A2 /* correct.json */; };
+		53956A07262F302F00F0A8A2 /* start.json in Resources */ = {isa = PBXBuildFile; fileRef = 53956A02262F302E00F0A8A2 /* start.json */; };
+		53956A08262F302F00F0A8A2 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 53956A03262F302E00F0A8A2 /* error.json */; };
+		53956A09262F302F00F0A8A2 /* gameOver.json in Resources */ = {isa = PBXBuildFile; fileRef = 53956A04262F302E00F0A8A2 /* gameOver.json */; };
+		53956A0A262F302F00F0A8A2 /* timesUP.json in Resources */ = {isa = PBXBuildFile; fileRef = 53956A05262F302F00F0A8A2 /* timesUP.json */; };
 		53A6CC2B262B23EB005DC330 /* String+RandomInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A6CC2A262B23EB005DC330 /* String+RandomInt.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +38,11 @@
 		539408A0262AC74A0054A153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		539408AA262AEC730054A153 /* HVD_Comic_Serif_Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HVD_Comic_Serif_Pro.otf; sourceTree = "<group>"; };
 		539408AF262B08CD0054A153 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		53956A01262F302E00F0A8A2 /* correct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = correct.json; sourceTree = "<group>"; };
+		53956A02262F302E00F0A8A2 /* start.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = start.json; sourceTree = "<group>"; };
+		53956A03262F302E00F0A8A2 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		53956A04262F302E00F0A8A2 /* gameOver.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gameOver.json; sourceTree = "<group>"; };
+		53956A05262F302F00F0A8A2 /* timesUP.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timesUP.json; sourceTree = "<group>"; };
 		53A6CC2A262B23EB005DC330 /* String+RandomInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RandomInt.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				539408B4262B09980054A153 /* SnapKit in Frameworks */,
+				539569FD262F266000F0A8A2 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +96,22 @@
 		539408AD262B07790054A153 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53956A00262F301B00F0A8A2 /* AnimationJSON */,
 				539408AA262AEC730054A153 /* HVD_Comic_Serif_Pro.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		53956A00262F301B00F0A8A2 /* AnimationJSON */ = {
+			isa = PBXGroup;
+			children = (
+				53956A01262F302E00F0A8A2 /* correct.json */,
+				53956A03262F302E00F0A8A2 /* error.json */,
+				53956A04262F302E00F0A8A2 /* gameOver.json */,
+				53956A02262F302E00F0A8A2 /* start.json */,
+				53956A05262F302F00F0A8A2 /* timesUP.json */,
+			);
+			path = AnimationJSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +132,7 @@
 			name = Add1;
 			packageProductDependencies = (
 				539408B3262B09980054A153 /* SnapKit */,
+				539569FC262F266000F0A8A2 /* Lottie */,
 			);
 			productName = Add1;
 			productReference = 5394088F262AC7440054A153 /* Add1.app */;
@@ -137,6 +163,7 @@
 			mainGroup = 53940886262AC7440054A153;
 			packageReferences = (
 				539408B2262B09980054A153 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				539569FB262F266000F0A8A2 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 53940890262AC7440054A153 /* Products */;
 			projectDirPath = "";
@@ -153,8 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5394089F262AC74A0054A153 /* LaunchScreen.storyboard in Resources */,
+				53956A08262F302F00F0A8A2 /* error.json in Resources */,
 				5394089C262AC74A0054A153 /* Assets.xcassets in Resources */,
+				53956A09262F302F00F0A8A2 /* gameOver.json in Resources */,
+				53956A06262F302F00F0A8A2 /* correct.json in Resources */,
+				53956A0A262F302F00F0A8A2 /* timesUP.json in Resources */,
 				539408AB262AEC730054A153 /* HVD_Comic_Serif_Pro.otf in Resources */,
+				53956A07262F302F00F0A8A2 /* start.json in Resources */,
 				5394089A262AC7440054A153 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6X5J69Q9BS;
 				INFOPLIST_FILE = Add1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6X5J69Q9BS;
 				INFOPLIST_FILE = Add1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +417,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		539569FB262F266000F0A8A2 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -390,6 +432,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 539408B2262B09980054A153 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		539569FC262F266000F0A8A2 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 539569FB262F266000F0A8A2 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 class GameView: UIView {
     //MARK: - 背景圖片
     var backgroundImageView: UIImageView =
@@ -77,20 +78,37 @@ class GameView: UIView {
             return label
         }()
     
-    
+    //MARK: - 輸入框
     var inputNumberLabel: UILabel =
         {
             let label = UILabel()
 
-            label.textColor = UIColor(red: 105/255, green: 168/255, blue: 255/255, alpha: 1)
+            label.textColor = #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1)
             label.font = UIFont(name: "HVDComicSerifPro", size: 70)
             label.textAlignment = .center
-            label.text = "1234"
+            label.text = ""
             label.adjustsFontSizeToFitWidth = true
-            label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+            label.backgroundColor = #colorLiteral(red: 0.631191766, green: 1, blue: 0.4405755412, alpha: 1)
             return label
         }()
     
+    //MARK: - 答案正確提示
+    var correctImageView: UIImageView =
+        {
+            let imageView = UIImageView(image: UIImage(named: "correct"))
+            imageView.isHidden = true
+            return imageView
+        }()
+    
+    //MARK: - 答案錯誤提示
+    var failImageView: UIImageView =
+        {
+            let imageView = UIImageView(image: UIImage(named: "fail"))
+            imageView.isHidden = true
+            return imageView
+        }()
+
+    //MARK: - 按鍵集合
      var buttonCollectionView: UICollectionView =
         {
             
@@ -120,6 +138,8 @@ class GameView: UIView {
             
            return collectionView
         }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureAllUserInterface()
@@ -141,6 +161,8 @@ class GameView: UIView {
         configureNumberImageView()
         configureNumberLabel()
         configureInputNumberLabel()
+        configureAnswerCorrectImageView()
+        configureAnswerFailImageView()
         configureButtonCollectionView()
     }
     
@@ -173,9 +195,11 @@ class GameView: UIView {
     private func configureScoreLabel()
     {
         self.scoreImageView.addSubview(scoreLabel)
+        let inset = UIScreen.main.bounds.width * 0.06
         self.scoreLabel.snp.makeConstraints { (make) in
-            make.top.right.equalToSuperview().inset(10)
+            make.top.equalTo(scoreImageView).inset(10)
             make.bottom.equalToSuperview().offset(-10)
+            make.right.equalToSuperview().inset(inset)
             make.width.equalToSuperview().multipliedBy(0.6)
         }
     }
@@ -187,7 +211,7 @@ class GameView: UIView {
         self.timeImageView.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-20)
             make.top.equalTo(self.snp.topMargin).offset(10)
-            make.width.equalToSuperview().multipliedBy(0.3)
+            make.width.equalToSuperview().multipliedBy(0.4)
             make.height.equalToSuperview().multipliedBy(0.06)
         }
     }
@@ -196,9 +220,12 @@ class GameView: UIView {
     private func configureTimeLabel()
     {
         self.timeImageView.addSubview(timeLabel)
+        let inset = UIScreen.main.bounds.width * 0.06
+        print(inset)
         self.timeLabel.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(10)
             make.bottom.equalToSuperview().offset(-10)
+            make.left.equalToSuperview().inset(inset)
             make.width.equalToSuperview().multipliedBy(0.6)
         }
     }
@@ -227,6 +254,8 @@ class GameView: UIView {
         
     }
     
+  
+    
     //MARK: - 配置要顯示的數字框
     private func configureInputNumberLabel()
     {
@@ -237,6 +266,34 @@ class GameView: UIView {
             make.top.equalTo(numberImageView.snp.bottom).offset(20)
         }
         
+    }
+    
+    //MARK: - 答案正確的提示
+    private func configureAnswerCorrectImageView()
+    {
+        self.addSubview(correctImageView)
+        
+        self.correctImageView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(inputNumberLabel.snp.top)
+            make.centerX.equalTo(inputNumberLabel.snp.right)
+            make.width.equalToSuperview().multipliedBy(0.2)
+            make.height.equalTo(correctImageView.snp.width)
+            
+        }
+    }
+    
+    //MARK: - 答案錯誤的提示
+    private func configureAnswerFailImageView()
+    {
+        self.addSubview(failImageView)
+        
+        self.failImageView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(inputNumberLabel.snp.top)
+            make.centerX.equalTo(inputNumberLabel.snp.right)
+            make.width.equalToSuperview().multipliedBy(0.2)
+            make.height.equalTo(failImageView.snp.width)
+            
+        }
     }
     
     //MARK: - 配置按鈕CollectionView
